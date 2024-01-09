@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-pet-project
+  labels:
+    app: main-pet-project
+spec:
+  replicas: 5
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: main-pet-project
+  template:
+    metadata:
+      labels:
+        app: main-pet-project
+    spec:
+      containers:
+        - name: main-pet-project-image
+          image: glockers/k8s-pet-project
+          ports:
+            - containerPort: 3000

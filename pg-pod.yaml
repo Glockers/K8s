@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pg-pod
+  namespace: test-ns
+  labels:
+    app: database
+    env: prod
+    owner: LitvishkoMaxim
+spec:
+  containers:
+    - name: pg-pod
+      image: caddy
+      ports:
+      - containerPort: 80
