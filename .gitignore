@@ -1,0 +1,13 @@
+node_modules
+
+/log
+/logs
+.env
+.eslintcache
+.env.production
+.env.development
+.vscode
+/dist
+/local_pgdata
+.env.docker
+.idea

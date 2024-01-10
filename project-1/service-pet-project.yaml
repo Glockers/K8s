@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pet-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: main-pet-project
+  ports:
+    - name: name-pet-service-port
+      protocol: TCP
+      port: 3000 # Port on Load balancer
+      targetPort: 3000 # POd on port
+
